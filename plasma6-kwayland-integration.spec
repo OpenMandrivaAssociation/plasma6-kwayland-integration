@@ -35,7 +35,7 @@ BuildRequires:	plasma-wayland-protocols
 BuildRequires:	wayland-tools
 # In reality, "not the KF5 version"
 BuildRequires:	plasma6-xdg-desktop-portal-kde
-Requires:	kwayland
+Requires:	kf6-kwayland
 
 %description
 KDE Library for integration  Wayland display server.
