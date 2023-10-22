@@ -1,6 +1,6 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 %define stable %([ "`echo %{plasmaver} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-%define git 20231014
+%define git 20231023
 
 Summary: 	KDE Library for integration with the Wayland display server
 Name: 		plasma6-kwayland-integration
@@ -26,6 +26,8 @@ BuildRequires:	cmake(Qt6Gui)
 BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6Test)
 BuildRequires:	cmake(Qt6WaylandClient)
+BuildRequires:	cmake(Qt5)
+BuildRequires:	qt5-qtwayland
 BuildRequires:	pkgconfig(xkbcommon)
 BuildRequires:	pkgconfig(wayland-client)
 BuildRequires:	cmake(WaylandProtocols)
@@ -55,5 +57,5 @@ KDE Library for integration  Wayland display server.
 %ninja_install -C build
 
 %files
-%{_qtdir}/plugins/kf6/kwindowsystem/KF6WindowSystemKWaylandPlugin.so
+%{_qtdir}/plugins/kf5/kwindowsystem/KF5WindowSystemKWaylandPlugin.so
 %{_datadir}/qlogging-categories6/kwindowsystem.kwayland.categories
