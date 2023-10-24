@@ -27,6 +27,7 @@ BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6Test)
 BuildRequires:	cmake(Qt6WaylandClient)
 BuildRequires:	cmake(Qt5)
+BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	qt5-qtwayland
 BuildRequires:	pkgconfig(xkbcommon)
 BuildRequires:	pkgconfig(wayland-client)
