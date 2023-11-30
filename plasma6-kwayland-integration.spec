@@ -1,15 +1,15 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
-%define stable %([ "`echo %{plasmaver} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-%define git 20231023
+%define stable %([ "`echo %{plasmaver} |cut -d. -f2`" -ge 80 ] && echo -n un; echo -n stable)
+#define git 20231023
 
 Summary: 	KDE Library for integration with the Wayland display server
 Name: 		plasma6-kwayland-integration
-Version:	5.240.0
+Version:	5.90.0
 Release: 	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/kwayland-integration/-/archive/master/kwayland-integration-master.tar.bz2#/kwayland-integration-%{git}.tar.bz2
 %else
-Source0: 	http://download.kde.org/%{stable}/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
+Source0: 	http://download.kde.org/%{stable}/plasma/%{plasmaver}/kwayland-integration-%{version}.tar.xz
 %endif
 Url: 		http://kde.org/
 License: 	GPL
@@ -17,7 +17,7 @@ Group: 		System/Libraries
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF6IdleTime)
 BuildRequires:	cmake(KF6WindowSystem)
-BuildRequires:	cmake(KF6Wayland)
+BuildRequires:	cmake(KWayland) >= 5.90.0
 BuildRequires:	cmake(KF6GuiAddons)
 BuildRequires:	cmake(Qt6)
 BuildRequires:	cmake(Qt6Core)
@@ -26,9 +26,13 @@ BuildRequires:	cmake(Qt6Gui)
 BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6Test)
 BuildRequires:	cmake(Qt6WaylandClient)
+
 BuildRequires:	cmake(Qt5)
 BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(KF5Wayland)
 BuildRequires:	qt5-qtwayland
+BuildRequires:	qt5-qtwayland-private-devel
+
 BuildRequires:	pkgconfig(xkbcommon)
 BuildRequires:	pkgconfig(wayland-client)
 BuildRequires:	cmake(WaylandProtocols)
