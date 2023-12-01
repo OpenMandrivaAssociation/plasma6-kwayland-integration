@@ -40,8 +40,6 @@ BuildRequires:	cmake(WaylandScanner)
 BuildRequires:	pkgconfig(wayland-protocols)
 BuildRequires:	plasma-wayland-protocols
 BuildRequires:	wayland-tools
-# In reality, "not the KF5 version"
-BuildRequires:	plasma6-xdg-desktop-portal-kde
 Requires:	kf6-kwayland
 
 %description
