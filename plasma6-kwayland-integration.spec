@@ -30,6 +30,7 @@ BuildRequires:	cmake(Qt6WaylandClient)
 BuildRequires:	cmake(Qt5)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(KF5Wayland)
+BuildRequires:	cmake(KF5WindowSystem)
 BuildRequires:	qt5-qtwayland
 BuildRequires:	qt5-qtwayland-private-devel
 
