@@ -1,13 +1,15 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 %define stable %([ "`echo %{plasmaver} |cut -d. -f2`" -ge 80 ] && echo -n un; echo -n stable)
 %define git 20240217
+%define gitbranch Plasma/6.0
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Summary: 	KDE Library for integration with the Wayland display server
 Name: 		plasma6-kwayland-integration
 Version:	5.94.0
 Release: 	%{?git:0.%{git}.}1
 %if 0%{?git:1}
-Source0:	https://invent.kde.org/plasma/kwayland-integration/-/archive/master/kwayland-integration-master.tar.bz2#/kwayland-integration-%{git}.tar.bz2
+Source0:	https://invent.kde.org/plasma/kwayland-integration/-/archive/%{gitbranch}/kwayland-integration-%{gitbranchd}.tar.bz2#/kwayland-integration-%{git}.tar.bz2
 %else
 Source0: 	http://download.kde.org/%{stable}/plasma/%{plasmaver}/kwayland-integration-%{version}.tar.xz
 %endif
@@ -47,7 +49,7 @@ Requires:	kf6-kwayland
 KDE Library for integration  Wayland display server.
 
 %prep
-%autosetup -p1 -n kwayland-integration-%{?git:master}%{!?git:%{version}}
+%autosetup -p1 -n kwayland-integration-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DBUILD_QCH:BOOL=ON \
 	-DBUILD_WITH_QT6:BOOL=ON \
