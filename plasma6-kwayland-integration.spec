@@ -43,7 +43,7 @@ BuildRequires:	cmake(WaylandScanner)
 BuildRequires:	pkgconfig(wayland-protocols)
 BuildRequires:	plasma-wayland-protocols
 BuildRequires:	wayland-tools
-Requires:	kf6-kwayland
+Requires:	plasma6-kwayland
 
 %description
 KDE Library for integration  Wayland display server.
