@@ -13,7 +13,7 @@ Source0:	https://invent.kde.org/plasma/kwayland-integration/-/archive/%{gitbranc
 %else
 Source0: 	http://download.kde.org/%{stable}/plasma/%{plasmaver}/kwayland-integration-%{version}.tar.xz
 %endif
-Url: 		http://kde.org/
+Url: 		https://kde.org/
 License: 	GPL
 Group: 		System/Libraries
 BuildRequires:	cmake(ECM)
