@@ -7,7 +7,7 @@
 Summary: 	KDE Library for integration with the Wayland display server
 Name: 		plasma6-kwayland-integration
 Version:	6.3.4
-Release: 	%{?git:0.%{git}.}1
+Release: 	%{?git:0.%{git}.}2
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/kwayland-integration/-/archive/%{gitbranch}/kwayland-integration-%{gitbranchd}.tar.bz2#/kwayland-integration-%{git}.tar.bz2
 %else
